@@ -1,0 +1,29 @@
+{
+  "name": "restapi1",
+  "version": "1.0.0",
+  "description": "aplikasi rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagusandre07/projectapi.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodeJs"
+  ],
+  "author": "bagusandre07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bagusandre07/projectapi/issues"
+  },
+  "homepage": "https://github.com/bagusandre07/projectapi#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "mysql": "^2.18.1"
+  }
+}
