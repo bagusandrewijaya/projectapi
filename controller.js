@@ -9,7 +9,7 @@ exports.index = function(req,res){
 
 //show data from mysqli
 exports.showdatam = function(req,res){
-    connection.query('select * from tb_mahasiswa',function(error,rows,fields){
+    connection.query('select * from tb_mahasiswa',function(error,rows,fileds){
         if (error) {
             connection.log(error);
         }else{
