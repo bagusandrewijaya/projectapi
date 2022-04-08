@@ -2,10 +2,10 @@
   "name": "restapi1",
   "version": "1.0.0",
   "description": "aplikasi rest api",
-  "main": "node index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
