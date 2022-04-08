@@ -2,10 +2,10 @@ var mysql = require('mysql');
 
 //create connection
 const conn = mysql.createConnection({
-    host:'localhost',
-     user:'root',
-     password:'',
-     database:'dbrestapi'
+    host:'www.db4free.net',
+     user:'andreskak',
+     password:'polibek22',
+     database:'restapia'
 });
 
 conn.connect((err)=>{
