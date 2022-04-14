@@ -2,7 +2,6 @@
 
 var response = require('./res');
 var connection = require('./koneksi');
-const { Result } = require('express-validator');
 
 exports.index = function(req,res){
     response.ok("connection ok!",res)
