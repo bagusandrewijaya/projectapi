@@ -51,12 +51,14 @@ module.exports = function(app){
                 kdmk: joi.string().max(10).required(),
                 matakuliah: joi.string().max(15).required(),
                 sks: joi.number().integer.required()
-            };
-                const result = joi.validate(req,body,schema);
+                 };
+            const result = joi.validate(req,body,schema);
                 console.log(result);
-                    })
-        .post(myjson.postdatamatkul);       
+            })
+        .post(myjson.postdatamatkul);    
+
+     app.route('/matakuliah/delete')
+         .delete(myjson.delmatkul);
 };
-    app.route('/matakuliah/delete')
-        .delete(myjson.delmatkul);
+  
    
