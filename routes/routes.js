@@ -33,6 +33,10 @@ module.exports = function(app){
     //route delete data by id
     app.route('/delete')
         .delete(myjson.deldata);
+
+//MATAKULIAH
+//
+//
     //route nested json
     app.route('/matakuliah')
     .get(myjson.matkulnested);
@@ -53,4 +57,6 @@ module.exports = function(app){
                     })
         .post(myjson.postdatamatkul);       
 };
+    app.route('/matakuliah/delete')
+        .delete(myjson.delmatkul);
    

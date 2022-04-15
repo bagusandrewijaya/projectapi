@@ -4,7 +4,10 @@ var response = require('./res');
 var connection = require('./koneksi');
 const req = require('express/lib/request');
 const { param } = require('express/lib/request');
-
+//
+//MAHASISWA
+//
+//
 exports.index = function(req,res){
     response.ok("connection ok!",res)
 }
@@ -84,6 +87,11 @@ exports.deldata = function(Req,res){
         }
     });
 }
+
+
+//MATAKULIAH
+//
+//
 //show matakuliah nested
 exports.matkulnested = function(req,res){
     connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa where krs.kd_mk = matakuliah.kd_mk and krs.nim = tb_mahasiswa.nim order by tb_mahasiswa.id_mahasiswa',
@@ -97,6 +105,7 @@ exports.matkulnested = function(req,res){
     });
 //matakuliah show matkul byid
 }
+
 exports.matkulnestedid = function(req,res){
     let nim = req.params.nim;
     connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa on krs.kd_mk = matakuliah.kd_mk and krs.nim = tb_mahasiswa.nim where tb_mahasiswa.nim =?',[nim],
@@ -136,6 +145,18 @@ exports.postdatamatkul = function(req,res){
         return;
         }else{
             response.ok('data berhasil data ditambah!',res)
+        }
+    });
+}
+//DELETE MATKUL
+exports.delmatkul = function(Req,res){
+    var kdmk = Req.body.kdmk;
+    connection.query('DELETE FROM matakuliah WHERE kdmk=?',[kdmk],
+    function(error,rows,fields){
+        if(error) {
+            console.log(error);
+        }else{
+            response.ok('matakuliah berhasil di hapus!',res)
         }
     });
 }
