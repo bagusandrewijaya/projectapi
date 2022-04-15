@@ -41,13 +41,13 @@ module.exports = function(app){
         .get(myjson.matkulnestedbyid);
     app.route('/matakuliah/postmatkul',(req,res)=>{
             const schema = {
-                kode_mk: joi.string().max(10).require(),
-                matakuliah: joi.string().max(15).require(),
-                sks: joi.number().integer.require()
-                };
+                kdmk: joi.string().max(10).required(),
+                matakuliah: joi.string().max(15).required(),
+                sks: joi.number().integer.required()
+            };
                 const result = joi.validate(req,body,schema);
                 console.log(result);
                     })
-        .post(myjson.postmatkul);       
+        .post(myjson.postdatamatkul);       
 };
    

@@ -58,11 +58,10 @@ exports.postdata = function(req,res){
 }
 //PUT DATA 
 exports.putdata = function(req,res){
-    var id = req.body.id_mahasiswa;
     var nim = req.body.nim;
     var nama = req.body.nama;
     var jurusan = req.body.jurusan;
-    connection.query('UPDATE tb_mahasiswa SET nim=?,nama=?,jurusan=? WHERE id_mahasiswa=?', [nim,nama,jurusan,id],
+    connection.query('UPDATE tb_mahasiswa SET nim=?,nama=?,jurusan=? WHERE nim=?', [nim,nama,jurusan],
     function(error,rows,fields){
         if(error) {
             console.log(error);
@@ -109,18 +108,19 @@ exports.matkulnestedbyid = function(req,res){
     });
 }
 //post matakuliah 
-exports.postmatkul = function(Req,res){
-    var kd_mk = req.body.kd_mk;
+exports.postdatamatkul = function(req,res){
+    var kdmk = req.body.kdmk;
     var matakuliah = req.body.matakuliah;
-    var sks = req.body.matakuliah;
-    connection.query('insert into matakuliah(kd_mk, matakuliah, sks) values(?,?,?)',[kd_mk,matakuliah,sks],
-    function(error,rows,fields){
+    var sks = req.body.sks;
+     connection.query('insert into matakuliah(kd_mk,matakuliah,sks)values(?,?,?)',
+     [kdmk,matakuliah,sks],
+     function(error,rows,fields){
         if(error) {
             console.log(error);
         res.status(400).send(error);
         return;
         }else{
-            response.ok('data matakuliah berhasil data ditambah!',res)
+            response.ok('data berhasil data ditambah!',res)
         }
-    })
+    });
 }
