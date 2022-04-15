@@ -13,7 +13,7 @@ module.exports = function(app){
     app.route('/all')
         .get(myjson.showdatam);
     //route show data by id
-    app.route('/all/id=:id')
+    app.route('/all/nim=:nim')
         .get(myjson.showbyid);
     //route post data
     app.route('/postdata',(req,res)=>{
@@ -59,6 +59,8 @@ module.exports = function(app){
 
      app.route('/matakuliah/delete')
          .delete(myjson.delmatkul);
+    app.route('/matakuliah/data')
+       .get(myjson.showmatkul);
 };
   
    

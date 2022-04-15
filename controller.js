@@ -23,8 +23,8 @@ exports.showdatam = function(req,res){
 };
 //show data by id
 exports.showbyid = function(req,res){
-    let id = req.params.id;
-    connection.query('select * from tb_mahasiswa where id_mahasiswa = ?',[id],function(error,rows,fields){
+    let nim = req.params.nim;
+    connection.query('select * from tb_mahasiswa where nim = ?',[nim],function(error,rows,fields){
         if (error) {
             connection.log(error);
         }else{
@@ -77,8 +77,8 @@ exports.putdata = function(req,res){
 }
 //DELETE DATA BY ID
 exports.deldata = function(Req,res){
-    var id = Req.body.id_mahasiswa;
-    connection.query('DELETE FROM tb_mahasiswa WHERE id_mahasiswa=?',[id],
+    var nim = Req.body.nim;
+    connection.query('DELETE FROM tb_mahasiswa WHERE nim=?',[nim],
     function(error,rows,fields){
         if(error) {
             console.log(error);
@@ -131,6 +131,17 @@ exports.matkulnestedbyid = function(req,res){
         }
     });
 }
+
+//GET MATKUL
+exports.showmatkul = function(req,res){
+    connection.query('select * from matakuliah',function(error,rows,fileds){
+        if (error) {
+            connection.log(error);
+        }else{
+            response.ok(rows,res)
+        }
+    });
+};
 //post matakuliah 
 exports.postdatamatkul = function(req,res){
     var kdmk = req.body.kdmk;
@@ -151,7 +162,7 @@ exports.postdatamatkul = function(req,res){
 //DELETE MATKUL
 exports.delmatkul = function(Req,res){
     var kdmk = Req.body.kdmk;
-    connection.query('DELETE FROM matakuliah WHERE kdmk=?',[kdmk],
+    connection.query('DELETE FROM matakuliah WHERE kd_mk=?',[kdmk],
     function(error,rows,fields){
         if(error) {
             console.log(error);
@@ -160,3 +171,4 @@ exports.delmatkul = function(Req,res){
         }
     });
 }
+//DELET MATKUL BY KODE MK
