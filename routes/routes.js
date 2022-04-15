@@ -37,8 +37,8 @@ module.exports = function(app){
     app.route('/matakuliah')
     .get(myjson.matkulnested);
     //matkul nested show matkul id
-    app.get('/matakuliah/nim=:nim')
-    .get(myjson.matkulnestedid)
+    app.route('/matakuliah/nim=:nim')
+        .get(myjson.matkulnestedid)
      //route  matkul by id
     app.route('/matakuliah/sks/nim=:nim')
         .get(myjson.matkulnestedbyid);
