@@ -5,7 +5,7 @@ const { get } = require('express/lib/response');
 const joi = require('joi');
 module.exports = function(app){
    
-    var myjson = require('../controller');
+     var myjson = require('../controller');
      //route homepage
     app.route('/')
         .get(myjson.index);
@@ -40,3 +40,13 @@ module.exports = function(app){
     app.route('/matakuliah/nim=:nim')
         .get(myjson.matkulnestedbyid);
 };
+app.route('/postmatkul',(req,res)=>{
+    const schema = {
+        kode_mk: joi.string().max(10).require(),
+        matakuliah: joi.string().max(15).require(),
+        sks: joi.number().integer.require()
+    };
+    const result = joi.validate(req,body,schema);
+    console.log(result);
+})
+        .post(myjson.postmatkul)

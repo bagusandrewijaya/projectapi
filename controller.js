@@ -2,11 +2,11 @@
 
 var response = require('./res');
 var connection = require('./koneksi');
+const req = require('express/lib/request');
 
 exports.index = function(req,res){
     response.ok("connection ok!",res)
 }
-
 //show data from mysqli 
 exports.showdatam = function(req,res){
     connection.query('select * from tb_mahasiswa',function(error,rows,fileds){
@@ -71,7 +71,6 @@ exports.putdata = function(req,res){
         }
     });
 }
-
 //DELETE DATA BY ID
 exports.deldata = function(Req,res){
     var id = Req.body.id_mahasiswa;
@@ -97,7 +96,6 @@ exports.matkulnested = function(req,res){
     });
 }
 //matakuliah nested by id
-
 exports.matkulnestedbyid = function(req,res){
    let nim = req.params.nim;
     connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah, sum(matakuliah.sks) as total_Sks from krs join matakuliah join tb_mahasiswa on krs.id_krs = matakuliah.id_mk and krs.id_krs = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.nim= ?',[nim],
@@ -109,4 +107,20 @@ exports.matkulnestedbyid = function(req,res){
         
         }
     });
+}
+//post matakuliah 
+exports.postmatkul = function(Req,res){
+    var kd_mk = req.body.kd_mk;
+    var matakuliah = req.body.matakuliah;
+    var sks = req.body.matakuliah;
+    connection.query('insert into matakuliah(kd_mk, matakuliah, sks) values(?,?,?)',[kd_mk,matakuliah,sks],
+    function(error,rows,fields){
+        if(error) {
+            console.log(error);
+        res.status(400).send(error);
+        return;
+        }else{
+            response.ok('data matakuliah berhasil data ditambah!',res)
+        }
+    })
 }

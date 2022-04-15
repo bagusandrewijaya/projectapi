@@ -3,7 +3,7 @@
 exports.ok = function(values, res){
     var data ={
         'status':200,
-        'dummy_Api':"create by bagus andre wijaya",
+        'dummy_Api':"created by bagus andre wijaya",
         'values':values
     
     };
