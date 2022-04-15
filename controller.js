@@ -61,7 +61,8 @@ exports.putdata = function(req,res){
     var nim = req.body.nim;
     var nama = req.body.nama;
     var jurusan = req.body.jurusan;
-    connection.query('UPDATE tb_mahasiswa SET nim=?,nama=?,jurusan=? WHERE nim=?', [nim,nama,jurusan],
+    var firstnim = req.body.firstnim;
+    connection.query('UPDATE tb_mahasiswa SET nim=?,nama=?,jurusan=? WHERE nim=?', [nim,nama,jurusan,firstnim],
     function(error,rows,fields){
         if(error) {
             console.log(error);
