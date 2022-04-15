@@ -99,8 +99,8 @@ exports.matkulnested = function(req,res){
 //matakuliah nested by id
 
 exports.matkulnestedbyid = function(req,res){
-   let id = req.params.id;
-    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah, sum(matakuliah.sks) as total_Sks from krs join matakuliah join tb_mahasiswa on krs.id_krs = matakuliah.id_mk and krs.id_krs = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.id_mahasiswa= ?',[id],
+   let nim = req.params.nim;
+    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah, sum(matakuliah.sks) as total_Sks from krs join matakuliah join tb_mahasiswa on krs.id_krs = matakuliah.id_mk and krs.id_krs = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.nim= ?',[nim],
     function(error,rows,fields){
         if (error) {
             console.log(error);
