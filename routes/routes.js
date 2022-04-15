@@ -39,14 +39,15 @@ module.exports = function(app){
     //route  matkul by id
     app.route('/matakuliah/nim=:nim')
         .get(myjson.matkulnestedbyid);
+    app.route('/matakuliah/postmatkul',(req,res)=>{
+            const schema = {
+                kode_mk: joi.string().max(10).require(),
+                matakuliah: joi.string().max(15).require(),
+                sks: joi.number().integer.require()
+                };
+                const result = joi.validate(req,body,schema);
+                console.log(result);
+                    })
+        .post(myjson.postmatkul);       
 };
-app.route('/matakuliah/postmatkul',(req,res)=>{
-    const schema = {
-        kode_mk: joi.string().max(10).require(),
-        matakuliah: joi.string().max(15).require(),
-        sks: joi.number().integer.require()
-    };
-    const result = joi.validate(req,body,schema);
-    console.log(result);
-})
-        .post(myjson.postmatkul)
+   
