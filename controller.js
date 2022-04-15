@@ -172,5 +172,20 @@ exports.delmatkul = function(Req,res){
     });
 }
 //PUT DATA MATKUL
-
+exports.updatedatamatkul = function(req,res){
+    var kdmk = req.body.kdmk;
+    var matakuliah = req.body.matakuliah;
+    var sks = req.body.sks;
+    var firstkdmk = req.body.firstkdmk;
+    connection.query('UPDATE matakuliah SET kd_mk=?,matakuliah=?,sks=? WHERE kd_mk=?', [kdmk,matakuliah,sks,firstkdmk],
+    function(error,rows,fields){
+        if(error) {
+            console.log(error);
+        res.status(400).send(error);
+        return;
+        }else{
+            response.ok('data berhasil data ditambah!',res)
+        }
+    });
+}
 //ADD KRS

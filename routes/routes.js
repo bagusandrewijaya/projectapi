@@ -1,8 +1,10 @@
 'use strict';
 
 const req = require('express/lib/request');
+const res = require('express/lib/response');
 const { get } = require('express/lib/response');
 const joi = require('joi');
+const { schema } = require('joi/lib/types/object');
 module.exports = function(app){
    
      var myjson = require('../controller');
@@ -61,6 +63,17 @@ module.exports = function(app){
          .delete(myjson.delmatkul);
     app.route('/matakuliah/data')
        .get(myjson.showmatkul);
+    app.route('/matakuliah/data/update',(req,res)=>{
+        const schema = {
+                kdmk: joi.string().max(10).required(),
+                matakuliah: joi.string().max(15).required(),
+                sks: joi.number().integer.required(),
+                firskdmk: joi.string().max(10).required()
+        };
+        const result = joi.validate(req,body,schema);
+                console.log(result);
+    })
+        .put(myjson.updatedatamatkul)
 };
   
    
