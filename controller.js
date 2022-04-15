@@ -3,6 +3,7 @@
 var response = require('./res');
 var connection = require('./koneksi');
 const req = require('express/lib/request');
+const { param } = require('express/lib/request');
 
 exports.index = function(req,res){
     response.ok("connection ok!",res)
@@ -97,7 +98,8 @@ exports.matkulnested = function(req,res){
 //matakuliah show matkul byid
 }
 exports.matkulnestedid = function(req,res){
-    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa on krs.kd_mk = matakuliah.kd_mk and krs.nim = tb_mahasiswa.nim where tb_mahasiswa.nim',
+    let nim = req.params.nim;
+    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa on krs.kd_mk = matakuliah.kd_mk and krs.nim = tb_mahasiswa.nim where tb_mahasiswa.nim =?',[nim],
     function(error,rows,fields){
         if (error) {
             console.log(error);
