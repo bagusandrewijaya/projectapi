@@ -80,13 +80,13 @@ exports.deldata = function(Req,res){
         if(error) {
             console.log(error);
         }else{
-            response.ok('DATA berhasil di update!',res)
+            response.ok('DATA berhasil di hapus!',res)
         }
     });
 }
 //show matakuliah nested
 exports.matkulnested = function(req,res){
-    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa where krs.id_matakuliah = matakuliah.id_matakuliah and krs.id_mahasiswa = tb_mahasiswa.id_mahasiswa order by tb_mahasiswa.id_mahasiswa',
+    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa where krs.kd_mk = matakuliah.kd_mk and krs.nim = tb_mahasiswa.nim order by tb_mahasiswa.id_mahasiswa',
     function(error,rows,fields){
         if (error) {
             console.log(error);
@@ -100,7 +100,7 @@ exports.matkulnested = function(req,res){
 
 exports.matkulnestedbyid = function(req,res){
    let id = req.params.id;
-    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa on krs.id_matakuliah = matakuliah.id_matakuliah and krs.id_mahasiswa = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.nim = ?',[id],
+    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah, sum(matakuliah.sks) as total_Sks from krs join matakuliah join tb_mahasiswa on krs.id_krs = matakuliah.id_mk and krs.id_krs = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.id_mahasiswa= ?',[id],
     function(error,rows,fields){
         if (error) {
             console.log(error);
