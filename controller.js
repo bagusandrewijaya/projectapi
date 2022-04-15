@@ -100,7 +100,7 @@ exports.matkulnested = function(req,res){
 
 exports.matkulnestedbyid = function(req,res){
    let id = req.params.id;
-    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa on krs.id_matakuliah = matakuliah.id_matakuliah and krs.id_mahasiswa = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.id_mahasiswa = ?',[id],
+    connection.query('select tb_mahasiswa.id_mahasiswa,tb_mahasiswa.nim,tb_mahasiswa.nama,tb_mahasiswa.jurusan,matakuliah.matakuliah from krs join matakuliah join tb_mahasiswa on krs.id_matakuliah = matakuliah.id_matakuliah and krs.id_mahasiswa = tb_mahasiswa.id_mahasiswa where tb_mahasiswa.nim = ?',[id],
     function(error,rows,fields){
         if (error) {
             console.log(error);

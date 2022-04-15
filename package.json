@@ -29,6 +29,7 @@
     "joi": "^13.1.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "swagger-ui-express": "^4.3.0"
   }
 }

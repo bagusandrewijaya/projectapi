@@ -5,7 +5,7 @@ const { get } = require('express/lib/response');
 const joi = require('joi');
 module.exports = function(app){
    
-    var myjson = require('./controller');
+    var myjson = require('../controller');
      //route homepage
     app.route('/')
         .get(myjson.index);
