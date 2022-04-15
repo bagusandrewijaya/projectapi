@@ -40,7 +40,7 @@ module.exports = function(app){
     app.route('/matakuliah/nim=:nim')
         .get(myjson.matkulnestedbyid);
 };
-app.route('/postmatkul',(req,res)=>{
+app.route('/matakuliah/postmatkul',(req,res)=>{
     const schema = {
         kode_mk: joi.string().max(10).require(),
         matakuliah: joi.string().max(15).require(),
