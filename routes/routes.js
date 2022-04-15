@@ -36,8 +36,11 @@ module.exports = function(app){
     //route nested json
     app.route('/matakuliah')
     .get(myjson.matkulnested);
-    //route  matkul by id
-    app.route('/matakuliah/nim=:nim')
+    //matkul nested show matkul id
+    app.get('/matakuliah/nim=:nim')
+    .get(myjson.matkulnestedid)
+     //route  matkul by id
+    app.route('/matakuliah/sks/nim=:nim')
         .get(myjson.matkulnestedbyid);
     app.route('/matakuliah/postmatkul',(req,res)=>{
             const schema = {
