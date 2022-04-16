@@ -2,7 +2,7 @@ var mysql = require('mysql');
 
 //create connection DATABASE
 const conn = mysql.createConnection({
-    host:'www.db4free.net',
+    host:'urdatabase',
      user:'andreskak',
      password:'polibek22',
      database:'restapia'
