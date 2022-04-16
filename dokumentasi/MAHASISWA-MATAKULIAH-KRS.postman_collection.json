@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "cfdf69e2-309b-4896-be88-b4f515cc6707",
+		"name": "MAHASISWA-MATAKULIAH-KRS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get matakuliah by nim",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/matakuliah/nim=162900032",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"matakuliah",
+						"nim=162900032"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get matakuliah",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/matakuliah/",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"matakuliah",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show sks by nim",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/matakuliah/sks/nim=162900032",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"matakuliah",
+						"sks",
+						"nim=162900032"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "dd2b6fea-9f30-4041-87a4-ecfd1a096051",
+		"name": "register-login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "andre",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "wijayabagusandre@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "1212",
+							"type": "default"
+						},
+						{
+							"key": "role",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "tanggal_daftar",
+							"value": "2022-04-16",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "1221@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"login"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

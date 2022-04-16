@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "3990068a-92ef-4c84-ac7c-ed310a7f3116",
+		"name": "matakuliah",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SHOW DATA MATKUL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/matakuliah/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matakuliah",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post matakuliah",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "kdmk",
+							"value": "DB51",
+							"type": "default"
+						},
+						{
+							"key": "matakuliah",
+							"value": "database design",
+							"type": "default"
+						},
+						{
+							"key": "sks",
+							"value": "d",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/matakuliah/postmatkul",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"matakuliah",
+						"postmatkul"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put matakuliah",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "kdmk",
+							"value": "ED71",
+							"type": "default"
+						},
+						{
+							"key": "matakuliah",
+							"value": "enginering design",
+							"type": "default"
+						},
+						{
+							"key": "sks",
+							"value": "3",
+							"type": "default"
+						},
+						{
+							"key": "firstkdmk",
+							"value": "AI02",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/matakuliah/data/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matakuliah",
+						"data",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELET MATKUL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "kdmk",
+							"value": "DB51",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/matakuliah/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matakuliah",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

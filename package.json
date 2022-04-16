@@ -28,6 +28,7 @@
     "ip": "^1.1.5",
     "joi": "^13.1.0",
     "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "swagger-ui-express": "^4.3.0"

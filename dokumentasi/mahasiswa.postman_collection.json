@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "5881108f-c786-4b83-86da-eb290b0d7044",
+		"name": "mahasiswa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/all",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-bynim",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/all/nim=12000343",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"all",
+						"nim=12000343"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post mahasiswa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nim",
+							"value": "12009011",
+							"type": "default"
+						},
+						{
+							"key": "nama",
+							"value": "adelia renata",
+							"type": "default"
+						},
+						{
+							"key": "jurusan",
+							"value": "computer science",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/postdata",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"postdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post mahasiswa error handling",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nim",
+							"value": "aszsas",
+							"type": "default"
+						},
+						{
+							"key": "nama",
+							"value": "andre",
+							"type": "default"
+						},
+						{
+							"key": "jurusan",
+							"value": "teknik sipil",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/postdata",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"postdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put mahasiswa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nim",
+							"value": "12009111",
+							"type": "default"
+						},
+						{
+							"key": "nama",
+							"value": "adelia renata",
+							"type": "default"
+						},
+						{
+							"key": "jurusan",
+							"value": "teknik jaringan",
+							"type": "default"
+						},
+						{
+							"key": "firstnim",
+							"value": "12009011",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/update",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete data mahasiswa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "6",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mahasiswa-restapi.herokuapp.com/delete",
+					"protocol": "https",
+					"host": [
+						"mahasiswa-restapi",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
