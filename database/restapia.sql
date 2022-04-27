@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0-rc1
+-- version 4.7.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Apr 16, 2022 at 02:24 PM
--- Server version: 8.0.28
--- PHP Version: 7.4.3
+-- Host: sql3.freesqldatabase.com
+-- Generation Time: Apr 27, 2022 at 01:39 AM
+-- Server version: 5.5.54-0ubuntu0.12.04.1
+-- PHP Version: 7.0.33-0ubuntu0.16.04.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -15,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8mb4 */;;
 
 --
 -- Database: `restapia`
@@ -32,7 +33,7 @@ CREATE TABLE `access_token` (
   `uid` int NOT NULL,
   `acces_token` text,
   `ip_address` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `access_token`
@@ -55,7 +56,7 @@ CREATE TABLE `krs` (
   `tanggal_krs` date NOT NULL,
   `kd_mk` varchar(10) DEFAULT NULL,
   `nim` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `krs`
@@ -80,7 +81,7 @@ CREATE TABLE `matakuliah` (
   `kd_mk` varchar(10) NOT NULL,
   `matakuliah` varchar(30) NOT NULL,
   `sks` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `matakuliah`
@@ -105,7 +106,7 @@ CREATE TABLE `tb_mahasiswa` (
   `nim` int DEFAULT NULL,
   `nama` varchar(30) NOT NULL,
   `jurusan` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `tb_mahasiswa`
@@ -133,7 +134,7 @@ CREATE TABLE `user` (
   `password` text,
   `role` int NOT NULL,
   `date_Sign` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `user`
